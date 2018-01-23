@@ -1,0 +1,119 @@
+MOV #1, 30        ; Write all values
+MOV #2, 23        ;
+MOV #3, 4         ;
+MOV #4, 56        ;
+MOV #5, 34        ;
+MOV #6, 56        ;
+MOV #7, 89        ;
+MOV #8, 32        ;
+MOV #9, 45        ;
+MOV #10, 25       ;
+JMP 16            ; Compare #1 with #2
+MOV #1, R1        ;
+MOV #2, R2        ;
+MOV R2, #1        ;
+MOV R1, #2        ;
+MOV #1, R1        ; Copy first two numbers to registers
+MOV #2, R2        ;
+SUB R1, R2        ; Subtract second from one
+JPN R1, 21        ; If result is negative or zero they're sorted
+JMP 12            ; Else switch them
+JMP 27            ; Compare #2 with #3
+MOV #2, R1        ; Same logic as above
+MOV #3, R2        ;
+MOV R2, #2        ;
+MOV R1, #3        ;
+JMP 16            ; Major difference is this line if you switch the values
+MOV #2, R1        ; go check previous two numbers again
+MOV #3, R2        ;
+SUB R1, R2        ;
+JPN R1, 32        ;
+JMP 22            ;
+JMP 38            ; Compare #3 with #4 and so on
+MOV #3, R1        ;
+MOV #4, R2        ;
+MOV R2, #3        ;
+MOV R1, #4        ;
+JMP 27            ;
+MOV #3, R1        ;
+MOV #4, R2        ;
+SUB R1, R2        ;
+JPN R1, 43        ;
+JMP 33            ;
+JMP 49            ; #4 - #5
+MOV #4, R1        ;
+MOV #5, R2        ;
+MOV R2, #4        ;
+MOV R1, #5        ;
+JMP 38            ;
+MOV #4, R1        ;
+MOV #5, R2        ;
+SUB R1, R2        ;
+JPN R1, 54        ;
+JMP 44            ;
+JMP 60            ; #5 - #6
+MOV #5, R1        ;
+MOV #6, R2        ;
+MOV R2, #5        ;
+MOV R1, #6        ;
+JMP 49            ;
+MOV #5, R1        ;
+MOV #6, R2        ;
+SUB R1, R2        ;
+JPN R1, 65        ;
+JMP 55            ;
+JMP 71            ; #6 - #7
+MOV #6, R1        ;
+MOV #7, R2        ;
+MOV R2, #6        ;
+MOV R1, #7        ;
+JMP 60            ;
+MOV #6, R1        ;
+MOV #7, R2        ;
+SUB R1, R2        ;
+JPN R1, 76        ;
+JMP 66            ;
+JMP 82            ; #7 - #8
+MOV #7, R1        ;
+MOV #8, R2        ;
+MOV R2, #7        ;
+MOV R1, #8        ;
+JMP 71            ;
+MOV #7, R1        ;
+MOV #8, R2        ;
+SUB R1, R2        ;
+JPN R1, 87        ;
+JMP 77            ;
+JMP 93            ; #8 - #9
+MOV #8, R1        ;
+MOV #9, R2        ;
+MOV R2, #8        ;
+MOV R1, #9        ;
+JMP 82            ;
+MOV #8, R1        ;
+MOV #9, R2        ;
+SUB R1, R2        ;
+JPN R1, 98        ;
+JMP 88            ;
+JMP 104           ; #9 - #10
+MOV #9, R1        ;
+MOV #10, R2       ;
+MOV R2, #9        ;
+MOV R1, #10       ;
+JMP 93            ;
+MOV #9, R1        ;
+MOV #10, R2       ;
+SUB R1, R2        ;
+JPN R1, 109       ;
+JMP 99            ;
+PRN #1            ; Print sorted values
+PRN #2            ;
+PRN #3            ;
+PRN #4            ;
+PRN #5            ;
+PRN #6            ;
+PRN #7            ;
+PRN #8            ;
+PRN #9            ;
+PRN #10           ;
+HLT               ; Finish
